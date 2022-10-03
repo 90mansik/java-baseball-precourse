@@ -8,11 +8,26 @@ public class Player {
 
     public static final int RANDOM_NUMBER_START = 1;
     public static final int RANDOM_NUMBER_END = 9;
+    private List<Integer> playNumbers = new ArrayList<>();
 
+
+    public void setPlayNumbers(String inputStr){
+        checkValidatetion(inputStr);
+
+        for(int i=0; i<inputStr.length(); i++){
+            int playnumber = Integer.parseInt(inputStr.charAt(i)+"");
+
+            playNumbers.add(playnumber);
+        }
+    }
+
+    public List<Integer> getPlayNumbers(){
+        return playNumbers;
+    }
     public void checkValidatetion(String inputStr){
         validateStrSize(inputStr);
         validateIsNumberic(inputStr);
-        validateNumberBoundary(Integer.parseInt(inputStr));
+        validateNumberBoundary(inputStr);
         validateDuplicated(inputStr);
     }
 
@@ -34,11 +49,13 @@ public class Player {
     }
 
 
-    public void validateNumberBoundary(int number){
-        if(number < RANDOM_NUMBER_START || number > RANDOM_NUMBER_END){
-            throw new IllegalArgumentException("1~9범위의 숫자만 입력 가능합니다.");
+    public void validateNumberBoundary(String inputStr){
+        for(int i=0; i<inputStr.length(); i++){
+            int number = Character.getNumericValue(inputStr.charAt(i)) ;
+            if(number < RANDOM_NUMBER_START || number > RANDOM_NUMBER_END){
+                throw new IllegalArgumentException("1~9범위의 숫자만 입력 가능합니다.");
+            }
         }
-
     }
     public void validateStrSize(String inputStr){
         if(inputStr == null ||  inputStr.length() != 3){
