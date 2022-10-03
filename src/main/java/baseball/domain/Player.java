@@ -10,6 +10,14 @@ public class Player {
     public static final int RANDOM_NUMBER_END = 9;
     private List<Integer> playNumbers = new ArrayList<>();
 
+    private static Player player;
+
+    public Player(){
+    }
+
+    public Player(String inputStr){
+        setPlayNumbers(inputStr);
+    }
 
     public void setPlayNumbers(String inputStr){
         checkValidatetion(inputStr);

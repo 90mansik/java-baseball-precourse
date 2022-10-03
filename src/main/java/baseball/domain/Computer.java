@@ -11,6 +11,14 @@ public class Computer {
 
     private List<Integer> randomNumbers = new ArrayList<>();
 
+    private static Computer computer;
+
+    public static Computer setupComputer(){
+        computer = new Computer();
+        computer.setRandomNumbers();;
+
+        return computer;
+    }
      public void setRandomNumbers(){
         while(randomNumbers.size() < NumberRange.NUMBERS_SIZE_MAX){
             int randomNumber = createRandomNumber();

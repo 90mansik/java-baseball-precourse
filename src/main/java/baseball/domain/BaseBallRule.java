@@ -51,11 +51,6 @@ public class BaseBallRule {
         return strikeCount;
     }
 
-    public int getBallCount(){
-        return ballCount;
-    }
-
-
     public String getGameResultString(){
         if(strikeCount == 0 && ballCount == 0){
             return GameStatus.NOTTING.getStatus();
