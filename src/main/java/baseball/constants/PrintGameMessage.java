@@ -10,7 +10,13 @@ public class PrintGameMessage {
     public static final String GAME_FINISH = "게임 종료";
 
     // validation 관련 메시지
-    public static final String INVALID_NUMBER_BOUNDARY_MESSAGE = "1~9범위의 숫자만 입력 가능합니다.";
+    public static final String INVALID_NUMBER_BOUNDARY = "1~9범위의 숫자만 입력 가능합니다.";
+
+    public static final String INVALID_NUMBER_SIZE = "3자리를 입력 해 주시기 바랍니다.";
+
+    public static final String INVALID_NUMBER_DUPLICATION = "중복된 숫자를 입력할 수 없습니다.";
+
+
 
 
 
